@@ -8,6 +8,4 @@ echo "<pre>";
 var_dump($rows);
 echo "<pre>";
 
-
-
 ?>
