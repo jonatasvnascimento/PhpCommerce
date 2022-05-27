@@ -1,3 +1,2 @@
 <?php
-  include "view/admin.php";
-?>
+  include "view/home.php";
