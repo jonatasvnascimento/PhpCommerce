@@ -63,7 +63,7 @@
         </div>
         <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="admin.php">
                     <svg class="nav-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -73,430 +73,212 @@
                     Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a>
             </li>
             <li class="nav-title">Cadastros</li>
-            <li class="nav-item">
-                <a class="nav-link" href="produto.php">
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
                     <svg class="nav-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                             <path d="M32 432C32 458.5 53.49 480 80 480h352c26.51 0 48-21.49 48-48V160H32V432zM160 236C160 229.4 165.4 224 172 224h168C346.6 224 352 229.4 352 236v8C352 250.6 346.6 256 340 256h-168C165.4 256 160 250.6 160 244V236zM480 32H32C14.31 32 0 46.31 0 64v48C0 120.8 7.188 128 16 128h480C504.8 128 512 120.8 512 112V64C512 46.31 497.7 32 480 32z" />
                         </svg>
                     </svg>
-                    Produto</a>
+                    Produtos</a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="produto.php"><span class="nav-icon"></span> Cadastros de Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="viewProduto.php"><span class="nav-icon"></span> Produtos Cadastrados</a>
+                    </li>
+                </ul>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="usuario.php">
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
                     <svg class="nav-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                            <path d="M319.9 320c57.41 0 103.1-46.56 103.1-104c0-57.44-46.54-104-103.1-104c-57.41 0-103.1 46.56-103.1 104C215.9 273.4 262.5 320 319.9 320zM369.9 352H270.1C191.6 352 128 411.7 128 485.3C128 500.1 140.7 512 156.4 512h327.2C499.3 512 512 500.1 512 485.3C512 411.7 448.4 352 369.9 352zM512 160c44.18 0 80-35.82 80-80S556.2 0 512 0c-44.18 0-80 35.82-80 80S467.8 160 512 160zM183.9 216c0-5.449 .9824-10.63 1.609-15.91C174.6 194.1 162.6 192 149.9 192H88.08C39.44 192 0 233.8 0 285.3C0 295.6 7.887 304 17.62 304h199.5C196.7 280.2 183.9 249.7 183.9 216zM128 160c44.18 0 80-35.82 80-80S172.2 0 128 0C83.82 0 48 35.82 48 80S83.82 160 128 160zM551.9 192h-61.84c-12.8 0-24.88 3.037-35.86 8.24C454.8 205.5 455.8 210.6 455.8 216c0 33.71-12.78 64.21-33.16 88h199.7C632.1 304 640 295.6 640 285.3C640 233.8 600.6 192 551.9 192z" />
+                            <path d="M32 432C32 458.5 53.49 480 80 480h352c26.51 0 48-21.49 48-48V160H32V432zM160 236C160 229.4 165.4 224 172 224h168C346.6 224 352 229.4 352 236v8C352 250.6 346.6 256 340 256h-168C165.4 256 160 250.6 160 244V236zM480 32H32C14.31 32 0 46.31 0 64v48C0 120.8 7.188 128 16 128h480C504.8 128 512 120.8 512 112V64C512 46.31 497.7 32 480 32z" />
                         </svg>
                     </svg>
-                    Usuario</a>
+                    Usuarios</a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuario.php"><span class="nav-icon"></span> Cadastros de Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="viewUsuario.php"><span class="nav-icon"></span> Usuarios Cadastrados</a>
+                    </li>
+                </ul>
             </li>
-            <!-- <li class="nav-title">Usuarios</li>
-        <li class="nav-group">
-          <a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use
-                xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"
-              ></use>
-            </svg>
-            Base</a
-          >
-          <ul class="nav-group-items">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/accordion.html"
-                ><span class="nav-icon"></span> Accordion</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/breadcrumb.html"
-                ><span class="nav-icon"></span> Breadcrumb</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/cards.html"
-                ><span class="nav-icon"></span> Cards</a
-              >
+            <!-- <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-cursor"></use>
+                    </svg>
+                    Buttons</a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/buttons/buttons.html"><span class="nav-icon"></span> Buttons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/buttons/button-group.html"><span class="nav-icon"></span> Buttons Group</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/buttons/dropdowns.html"><span class="nav-icon"></span> Dropdowns</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/carousel.html"
-                ><span class="nav-icon"></span> Carousel</a
-              >
+                <a class="nav-link" href="charts.html">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-chart-pie"></use>
+                    </svg>
+                    Charts</a>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-notes"></use>
+                    </svg>
+                    Forms</a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/forms/form-control.html">
+                            Form Control</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/forms/select.html">
+                            Select</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/forms/checks-radios.html">
+                            Checks and radios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/forms/range.html">
+                            Range</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/forms/input-group.html">
+                            Input group</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/forms/floating-labels.html">
+                            Floating labels</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/forms/layout.html">
+                            Layout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/forms/validation.html">
+                            Validation</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-star"></use>
+                    </svg>
+                    Icons</a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/icons/coreui-icons-free.html">
+                            CoreUI Icons<span class="badge badge-sm bg-success ms-auto">Free</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/icons/coreui-icons-brand.html">
+                            CoreUI Icons - Brand</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/icons/coreui-icons-flag.html">
+                            CoreUI Icons - Flag</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
+                    </svg>
+                    Notifications</a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/notifications/alerts.html"><span class="nav-icon"></span> Alerts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/notifications/badge.html"><span class="nav-icon"></span> Badge</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/notifications/modals.html"><span class="nav-icon"></span> Modals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://coreui.io/demo/4.0/free/notifications/toasts.html"><span class="nav-icon"></span> Toasts</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/collapse.html"
-                ><span class="nav-icon"></span> Collapse</a
-              >
+                <a class="nav-link" href="widgets.html">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-calculator"></use>
+                    </svg>
+                    Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a>
+            </li>
+            <li class="nav-divider"></li>
+            <li class="nav-title">Extras</li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-star"></use>
+                    </svg>
+                    Pages</a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" target="_top">
+                            <svg class="nav-icon">
+                                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+                            </svg>
+                            Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html" target="_top">
+                            <svg class="nav-icon">
+                                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+                            </svg>
+                            Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="404.html" target="_top">
+                            <svg class="nav-icon">
+                                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bug"></use>
+                            </svg>
+                            Error 404</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="500.html" target="_top">
+                            <svg class="nav-icon">
+                                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bug"></use>
+                            </svg>
+                            Error 500</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item mt-auto">
+                <a class="nav-link" href="docs.html">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-description"></use>
+                    </svg>
+                    Docs</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/list-group.html"
-                ><span class="nav-icon"></span> List group</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/navs.html"
-                ><span class="nav-icon"></span> Navs</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/pagination.html"
-                ><span class="nav-icon"></span> Pagination</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/popovers.html"
-                ><span class="nav-icon"></span> Popovers</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/progress.html"
-                ><span class="nav-icon"></span> Progress</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/scrollspy.html"
-                ><span class="nav-icon"></span> Scrollspy</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/spinners.html"
-                ><span class="nav-icon"></span> Spinners</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/tables.html"
-                ><span class="nav-icon"></span> Tables</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/tabs.html"
-                ><span class="nav-icon"></span> Tabs</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/base/tooltips.html"
-                ><span class="nav-icon"></span> Tooltips</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="nav-group">
-          <a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use
-                xlink:href="vendors/@coreui/icons/svg/free.svg#cil-cursor"
-              ></use>
-            </svg>
-            Buttons</a
-          >
-          <ul class="nav-group-items">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/buttons/buttons.html"
-                ><span class="nav-icon"></span> Buttons</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/buttons/button-group.html"
-                ><span class="nav-icon"></span> Buttons Group</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/buttons/dropdowns.html"
-                ><span class="nav-icon"></span> Dropdowns</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <svg class="nav-icon">
-              <use
-                xlink:href="vendors/@coreui/icons/svg/free.svg#cil-chart-pie"
-              ></use>
-            </svg>
-            Charts</a
-          >
-        </li>
-        <li class="nav-group">
-          <a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use
-                xlink:href="vendors/@coreui/icons/svg/free.svg#cil-notes"
-              ></use>
-            </svg>
-            Forms</a
-          >
-          <ul class="nav-group-items">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/forms/form-control.html"
-              >
-                Form Control</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/forms/select.html"
-              >
-                Select</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/forms/checks-radios.html"
-              >
-                Checks and radios</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/forms/range.html"
-              >
-                Range</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/forms/input-group.html"
-              >
-                Input group</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/forms/floating-labels.html"
-              >
-                Floating labels</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/forms/layout.html"
-              >
-                Layout</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/forms/validation.html"
-              >
-                Validation</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="nav-group">
-          <a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use
-                xlink:href="vendors/@coreui/icons/svg/free.svg#cil-star"
-              ></use>
-            </svg>
-            Icons</a
-          >
-          <ul class="nav-group-items">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/icons/coreui-icons-free.html"
-              >
-                CoreUI Icons<span class="badge badge-sm bg-success ms-auto"
-                  >Free</span
-                ></a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/icons/coreui-icons-brand.html"
-              >
-                CoreUI Icons - Brand</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/icons/coreui-icons-flag.html"
-              >
-                CoreUI Icons - Flag</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="nav-group">
-          <a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use
-                xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"
-              ></use>
-            </svg>
-            Notifications</a
-          >
-          <ul class="nav-group-items">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/notifications/alerts.html"
-                ><span class="nav-icon"></span> Alerts</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/notifications/badge.html"
-                ><span class="nav-icon"></span> Badge</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/notifications/modals.html"
-                ><span class="nav-icon"></span> Modals</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://coreui.io/demo/4.0/free/notifications/toasts.html"
-                ><span class="nav-icon"></span> Toasts</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="widgets.html">
-            <svg class="nav-icon">
-              <use
-                xlink:href="vendors/@coreui/icons/svg/free.svg#cil-calculator"
-              ></use>
-            </svg>
-            Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a
-          >
-        </li>
-        <li class="nav-divider"></li>
-        <li class="nav-title">Extras</li>
-        <li class="nav-group">
-          <a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use
-                xlink:href="vendors/@coreui/icons/svg/free.svg#cil-star"
-              ></use>
-            </svg>
-            Pages</a
-          >
-          <ul class="nav-group-items">
-            <li class="nav-item">
-              <a class="nav-link" href="login.html" target="_top">
-                <svg class="nav-icon">
-                  <use
-                    xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"
-                  ></use>
-                </svg>
-                Login</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="register.html" target="_top">
-                <svg class="nav-icon">
-                  <use
-                    xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"
-                  ></use>
-                </svg>
-                Register</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="404.html" target="_top">
-                <svg class="nav-icon">
-                  <use
-                    xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bug"
-                  ></use>
-                </svg>
-                Error 404</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="500.html" target="_top">
-                <svg class="nav-icon">
-                  <use
-                    xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bug"
-                  ></use>
-                </svg>
-                Error 500</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item mt-auto">
-          <a class="nav-link" href="docs.html">
-            <svg class="nav-icon">
-              <use
-                xlink:href="vendors/@coreui/icons/svg/free.svg#cil-description"
-              ></use>
-            </svg>
-            Docs</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link nav-link-danger"
-            href="https://coreui.io/pro/"
-            target="_top"
-          >
-            <svg class="nav-icon">
-              <use
-                xlink:href="vendors/@coreui/icons/svg/free.svg#cil-layers"
-              ></use>
-            </svg>
-            Try CoreUI
-            <div class="fw-semibold">PRO</div>
-          </a>
-        </li> -->
+                <a class="nav-link nav-link-danger" href="https://coreui.io/pro/" target="_top">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-layers"></use>
+                    </svg>
+                    Try CoreUI
+                    <div class="fw-semibold">PRO</div>
+                </a>
+            </li> -->
         </ul>
         <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
     </div>
@@ -625,49 +407,39 @@
             </div>
         </header>
         <div class="body flex-grow-1 px-3">
-            <form class="row g-3">
-                <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4">
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="col-md-4">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="inputZip" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-                <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
+            <form>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Descrição</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="Descrição" type="text">
                     </div>
                 </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Quantidade</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="Quantidade" type="text">
+                    </div>
                 </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Preço</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="Preço" type="text">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Marca</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="Marca" type="text">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Dissponivel</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="s" type="text">
+                    </div>
+                </div>
+               
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
             </form>
         </div>
         <footer class="footer">
