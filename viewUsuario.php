@@ -407,40 +407,44 @@
             </div>
         </header>
         <div class="body flex-grow-1 px-3">
-            <form>
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Descrição</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="Descrição" type="text">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Quantidade</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="Quantidade" type="text">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Preço</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="Preço" type="text">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Marca</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="Marca" type="text">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Dissponivel</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="s" type="text">
-                    </div>
-                </div>
-               
-                <button class="btn btn-primary" type="submit">Cadastrar</button>
-            </form>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <?php
+
+            require_once "../model/db.php";
+            $selectUsuarios = "SELECT * FROM usuarios";
+            $result = $db->query($selectUsuarios);
+
+            ?>
         </div>
         <footer class="footer">
             <div>

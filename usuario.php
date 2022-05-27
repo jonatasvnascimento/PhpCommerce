@@ -407,40 +407,62 @@
             </div>
         </header>
         <div class="body flex-grow-1 px-3">
-            <form>
+
+            <form name="fromCadProduto" method="POST" action="">
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Descrição</label>
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Nome</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="Descrição" type="text">
+                        <input class="form-control" name="name" type="text">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Quantidade</label>
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Email</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="Quantidade" type="text">
+                        <input class="form-control" name="email" type="text">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Preço</label>
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Senha</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="Preço" type="text">
+                        <input class="form-control" name="senha" type="text">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Marca</label>
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Ativo</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="Marca" type="text">
+                        <input class="form-control" name="isAtivo" type="text">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Dissponivel</label>
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Admin</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="s" type="text">
+                        <input class="form-control" name="isAdmin" type="text">
                     </div>
                 </div>
-               
-                <button class="btn btn-primary" type="submit">Cadastrar</button>
+
+                <button class="btn btn-primary" type="submit" value="Cadastrar" name="cadUsuario">Cadastrar</button>
             </form>
+
+            <?php
+            require_once "../model/db.php";
+            if (isset($_POST['cadUsuario'])) {
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $senha = $_POST['senha'];
+                $isAtivo = $_POST['isAtivo'];
+                $isAdmin = $_POST['isAdmin'];
+                echo "{$name} - {$email} - {$senha} - {$isAtivo} - {$isAdmin}";
+
+                $insertUsuario = "INSERT INTO usuarios (nome, email, senha, ativo, isAdmin) VALUES ('$name', '$email', '$senha', '$isAtivo', '$isAdmin')";
+
+                if ($db->exec($insertUsuario)) {
+                  echo "Usuário cadastrado com sucesso!";
+                }else{
+                  echo "Erro ao cadastrar usuário!";
+                }
+            }
+
+            ?>
         </div>
         <footer class="footer">
             <div>

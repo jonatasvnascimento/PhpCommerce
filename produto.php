@@ -407,35 +407,72 @@
             </div>
         </header>
         <div class="body flex-grow-1 px-3">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <form name="fromCadProduto" method="POST" action="">
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Descrição</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" name="desc" type="text">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Quantidade</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" name="qtd" type="text">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Preço</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" name="preco" type="text">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Marca</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" name="marca" type="text">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="inlineFormInputGroupUsername">Disponivel</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" name="disponivel" type="text">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" type="submit" value="Cadastrar" name="cadProduto">Cadastrar</button>
+            </form>
+
+            <?php
+
+            // require_once 'model/modelConexao.php';
+            // $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            // var_dump($dados);
+
+            if (isset($_POST['cadProduto'])) {
+                $desc = $_POST['desc'];
+                $qtd = $_POST['qtd'];
+                $preco = $_POST['preco'];
+                $marca = $_POST['marca'];
+                $disponivel = $_POST['disponivel'];
+                echo "{$desc} - {$qtd} - {$preco} - {$marca} - {$disponivel}";
+                // $queryInsertProd = "INSERT INTO produtos (descricao, quantidade, preco, marca, disponivel) VALUES ('Teste',65,99,'654','Sim')";
+                // $cadProd = $db->prepare($queryInsertProd);
+                // $cadProd->execute();
+            }
+
+            // if (!empty($dados['cadProduto'])) {
+            //     var_dump($dados);
+
+            //     $queryInsertProd = "insert into produtos (descricao, quantidade, preco, marca, disponivel) values ('PC',44,99,'Dell','Sim')";
+
+            //     $cadProd = $db->prepare($queryInsertProd);
+            //     $cadProd->execute();
+            // }
+
+
+            ?>
+
         </div>
         <footer class="footer">
             <div>
@@ -462,5 +499,7 @@
     <script src="https://coreui.io/demo/4.0/free/js/main.js"></script>
     <script></script>
 </body>
+
+
 
 </html>
