@@ -444,33 +444,25 @@
             </form>
 
             <?php
-
-            // require_once 'model/modelConexao.php';
-            // $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-            // var_dump($dados);
-
+            require_once "model/db.php";
             if (isset($_POST['cadProduto'])) {
                 $desc = $_POST['desc'];
                 $qtd = $_POST['qtd'];
                 $preco = $_POST['preco'];
                 $marca = $_POST['marca'];
                 $disponivel = $_POST['disponivel'];
-                echo "{$desc} - {$qtd} - {$preco} - {$marca} - {$disponivel}";
-                // $queryInsertProd = "INSERT INTO produtos (descricao, quantidade, preco, marca, disponivel) VALUES ('Teste',65,99,'654','Sim')";
-                // $cadProd = $db->prepare($queryInsertProd);
-                // $cadProd->execute();
+
+                if ($desc == "" || $qtd == "" || $preco == "" || $marca == "" || $disponivel == "") {
+                    echo "<script>alert('Preencha todos os campos!');</script>";
+                } else {
+                    $insertProduto = "INSERT INTO produtos (descricao, quantidade, preco, marca, disponivel) VALUES ('$desc', '$qtd', '$preco', '$marca', '$disponivel')";
+                    if ($db->exec($insertProduto)) {
+                        echo "Produto cadastrado com sucesso!";
+                    } else {
+                        echo "Erro ao cadastrar produto!";
+                    }
+                }
             }
-
-            // if (!empty($dados['cadProduto'])) {
-            //     var_dump($dados);
-
-            //     $queryInsertProd = "insert into produtos (descricao, quantidade, preco, marca, disponivel) values ('PC',44,99,'Dell','Sim')";
-
-            //     $cadProd = $db->prepare($queryInsertProd);
-            //     $cadProd->execute();
-            // }
-
-
             ?>
 
         </div>

@@ -442,24 +442,28 @@
 
                 <button class="btn btn-primary" type="submit" value="Cadastrar" name="cadUsuario">Cadastrar</button>
             </form>
-
             <?php
             require_once "model/db.php";
             if (isset($_POST['cadUsuario'])) {
+
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $senha = $_POST['senha'];
                 $isAtivo = $_POST['isAtivo'];
                 $isAdmin = $_POST['isAdmin'];
-                echo "{$name} - {$email} - {$senha} - {$isAtivo} - {$isAdmin}";
 
-                $insertUsuario = "INSERT INTO usuarios (nome, email, senha, ativo, isAdmin) VALUES ('$name', '$email', '$senha', '$isAtivo', '$isAdmin')";
+                if ($name == "" || $email == "" || $senha == "" || $isAtivo == "" || $isAdmin == "") {
+                    echo "<script> alert('Preencha todos os campos');</script>";
+                } else {
+                    $insertUsuario = "INSERT INTO usuarios (nome, email, senha, ativo, isAdmin) VALUES ('$name', '$email', '$senha', '$isAtivo', '$isAdmin')";
 
-                if ($db->exec($insertUsuario)) {
-                  echo "Usuário cadastrado com sucesso!";
-                }else{
-                  echo "Erro ao cadastrar usuário!";
+                    if ($db->exec($insertUsuario)) {
+                        echo "Usuário cadastrado com sucesso!";
+                    } else {
+                        echo "Erro ao cadastrar usuário!";
+                    }
                 }
+                //  echo "{$name} - {$email} - {$senha} - {$isAtivo} - {$isAdmin}";
             }
 
             ?>
