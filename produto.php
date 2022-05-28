@@ -51,7 +51,7 @@ if (isset($_POST['cadProduto'])) {
     if ($desc == "" || $qtd == "" || $preco == "" || $marca == "" || $disponivel == "") {
         echo "<script>alert('Preencha todos os campos!');</script>";
     } else {
-        $insertProduto = "INSERT INTO produtos (descricao, quantidade, preco, marca, disponivel) VALUES ('$desc', '$qtd', '$preco', '$marca', '$disponivel')";
+        $insertProduto = "INSERT INTO produtos (descricao, quantidade, preco, marca, disponivel) VALUES ('$desc', '$qtd', '$preco', '$marca', '$disponivel', '')";
         if ($db->exec($insertProduto)) {
             echo "Produto cadastrado com sucesso!";
         } else {
