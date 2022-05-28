@@ -51,7 +51,7 @@ if (isset($_POST['cadUsuario'])) {
     if ($name == "" || $email == "" || $senha == "" || $isAtivo == "" || $isAdmin == "") {
         echo "<script> alert('Preencha todos os campos');</script>";
     } else {
-        $insertUsuario = "INSERT INTO usuarios (nome, email, senha, ativo, isAdmin) VALUES ('$name', '$email', '$senha', '$isAtivo', '$isAdmin', '')";
+        $insertUsuario = "INSERT INTO usuarios (nome, email, senha, ativo, isAdmin, delet) VALUES ('$name', '$email', '$senha', '$isAtivo', '$isAdmin', '')";
 
         if ($db->exec($insertUsuario)) {
             echo "Usuário cadastrado com sucesso!";
