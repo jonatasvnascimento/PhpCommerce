@@ -1,6 +1,8 @@
 <?php
 include_once 'tamplateHome\header.php';
 include_once 'tamplateHome\body.php';
+
+
 ?>
 
 <style>
