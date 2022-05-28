@@ -33,6 +33,8 @@ session_start();
     
     if ($ab > 0) {
       if (password_verify($dados['senha'], $row['senha'])) {
+        echo "Login efetuado com sucesso!";
+      }else{
         $_SESSION['msg'] = "<p style='color:red;'>Usuário ou Senha invalidos</p>";
       }
     } else {
