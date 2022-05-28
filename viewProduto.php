@@ -10,7 +10,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template" />
     <meta name="author" content="Łukasz Holeczek" />
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard" />
-    <title>CoreUI Free Bootstrap Admin Template</title>
+    <title>LuzCommerce</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://coreui.io/demo/4.0/free/assets/favicon/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="https://coreui.io/demo/4.0/free/assets/favicon/apple-icon-60x60.png" />
@@ -407,34 +407,37 @@
             </div>
         </header>
         <div class="body flex-grow-1 px-3">
+            <?php
+            include_once "model/db.php";
+            ?>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Disponivel</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
+                <?php
+                $selectUsuarios = "SELECT * FROM produtos order by id asc";
+                $result = $db->query($selectUsuarios);
+
+                while ($row = $result->fetchArray()) {
+                    echo "<tbody>";
+                    echo "<tr>";
+                    echo "<td>{$row['id']}</td>";
+                    echo "<td>{$row['descricao']}</td>";
+                    echo "<td>{$row['quantidade']}</td>";
+                    echo "<td>{$row['preco']}</td>";
+                    echo "<td>{$row['marca']}</td>";
+                    echo "<td>{$row['disponivel']}</td>";
+                    echo "</tr>";
+                    echo "</tbody>";
+                }
+                ?>
             </table>
         </div>
         <footer class="footer">
