@@ -10,7 +10,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template" />
     <meta name="author" content="Łukasz Holeczek" />
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard" />
-    <title>CoreUI Free Bootstrap Admin Template</title>
+    <title>LuzCommerce</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://coreui.io/demo/4.0/free/assets/favicon/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="https://coreui.io/demo/4.0/free/assets/favicon/apple-icon-60x60.png" />
@@ -415,6 +415,9 @@
                 $senha = $_POST['senha'];
                 $ativo = 1;
                 $isAdmin = 0;
+
+
+
                 $insertUsuario = "INSERT INTO usuarios (nome, email, senha, ativo, isAdmin) VALUES ('$nome', '$email', '$senha', '$ativo', '$isAdmin')";
 
                 if ($db->exec($insertUsuario)) {
@@ -439,8 +442,16 @@
                         <th scope="col">Senha</th>
                         <th scope="col">Ativo</th>
                         <th scope="col">Admin</th>
+                        <th scope="col"  class="d-flex justify-content-center">Ação</th>
                     </tr>
                 </thead>
+
+                <style>
+                    a {
+                        text-decoration: none;
+                        color: black;
+                    }
+                </style>
                 <?php
                 $selectUsuarios = "SELECT * FROM usuarios order by id asc";
                 $result = $db->query($selectUsuarios);
@@ -454,6 +465,17 @@
                     echo "<td>{$row['senha']}</td>";
                     echo "<td>{$row['ativo']}</td>";
                     echo "<td>{$row['isAdmin']}</td>";
+                    echo "  <td  class='d-flex justify-content-center'>
+                                <button class='btn btn-success rounded-pill' type='button'>
+                                    <a href='visualizar.php?id={$row['id']}'><i class='fa-solid fa-magnifying-glass'></i></a>
+                                </button> 
+                                <button class='btn btn-danger rounded-pill' type='button'>
+                                    <a href='editar.php?id={$row['id']}'><i class='fa-solid fa-pen'></i></a>
+                                </button> 
+                                <button class='btn btn-warning rounded-pill' type='button'>
+                                    <a href='deletar.php?id={$row['id']}'><i class='fa-solid fa-trash-can'></i></a>
+                                </button>  
+                            </td>";
                     echo "</tr>";
                     echo "</tbody>";
                 }

@@ -13,21 +13,23 @@ if(!$db){
 }
 
 // $tableUsuarios = "CREATE TABLE IF NOT EXISTS usuarios (
-//     id INTEGER PRIMARY KEY AUTOINCREMENT,
-//     nome TEXT NOT NULL,
-//     email TEXT NOT NULL,
-//     senha TEXT NOT NULL,
-//     ativo INTEGER NOT NULL,
-//     isAdmin INTEGER NOT NULL
+//     id       INTEGER     PRIMARY KEY AUTOINCREMENT,
+//     nome     TEXT        NOT NULL,
+//     email    TEXT        NOT NULL,
+//     senha    TEXT        NOT NULL,
+//     ativo    INTEGER     NOT NULL,
+//     isAdmin  INTEGER     NOT NULL,
+//     [delet] VARCHAR (10) 
 // )";
 
-// $tableProdutos = "CREATE TABLE produtos (
+// $tableProdutos = "CREATE TABLE IF NOT EXISTS produtos (
 //     id         INTEGER       PRIMARY KEY AUTOINCREMENT,
 //     descricao  VARCHAR (200) NOT NULL,
 //     quantidade INTEGER       NOT NULL,
 //     preco      DOUBLE        NOT NULL,
 //     marca      VARCHAR (50),
-//     disponivel INT
+//     disponivel INT,
+//     [delet]   VARCHAR (10) 
 // )";
 
 // if($db->exec($tableUsuarios)){
