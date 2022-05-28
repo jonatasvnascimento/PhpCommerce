@@ -407,7 +407,29 @@
             </div>
         </header>
         <div class="body flex-grow-1 px-3">
+            <?php
+            include_once "model/db.php";
+            if (isset($_POST['submit'])) {
+                $nome = $_POST['name'];
+                $email = $_POST['email'];
+                $senha = $_POST['senha'];
+                $ativo = 1;
+                $isAdmin = 0;
+                $insertUsuario = "INSERT INTO usuarios (nome, email, senha, ativo, isAdmin) VALUES ('$nome', '$email', '$senha', '$ativo', '$isAdmin')";
 
+                if ($db->exec($insertUsuario)) {
+                    echo "Usuário cadastrado com sucesso!";
+                } else {
+                    echo "Erro ao cadastrar usuário!";
+                }
+            }
+            ?>
+            <form action="" method="post">
+                <input type="text" name="name" placeholder="name">
+                <input type="text" name="email" placeholder="email">
+                <input type="text" name="senha" placeholder="senha">
+                <input type="submit" name="submit" value="submit">
+            </form>
             <table class="table">
                 <thead>
                     <tr>
@@ -415,36 +437,28 @@
                         <th scope="col">First</th>
                         <th scope="col">Last</th>
                         <th scope="col">Handle</th>
+                        <th scope="col">Handle</th>
+
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
+                <?php
+                $selectUsuarios = "SELECT * FROM usuarios order by id desc";
+                $result = $db->query($selectUsuarios);
+
+                while ($row = $result->fetchArray()) {
+                    echo "<tbody>";
+                    echo "<tr>";
+                    echo "<td>{$row['id']}</td>";
+                    echo "<td>{$row['nome']}</td>";
+                    echo "<td>{$row['email']}</td>";
+                    echo "<td>{$row['senha']}</td>";
+                    echo "<td>{$row['ativo']}</td>";
+                    echo "<td>{$row['isAdmin']}</td>";
+                    echo "</tr>";
+                    echo "</tbody>";
+                }
+                ?>
             </table>
-
-            <?php
-
-            require_once "../model/db.php";
-            $selectUsuarios = "SELECT * FROM usuarios";
-            $result = $db->query($selectUsuarios);
-
-            ?>
         </div>
         <footer class="footer">
             <div>

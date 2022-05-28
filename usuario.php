@@ -444,7 +444,7 @@
             </form>
 
             <?php
-            require_once "../model/db.php";
+            require_once "model/db.php";
             if (isset($_POST['cadUsuario'])) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
