@@ -424,25 +424,25 @@
                 }
             }
             ?>
-            <form action="" method="post">
+            <!-- <form action="" method="post">
                 <input type="text" name="name" placeholder="name">
                 <input type="text" name="email" placeholder="email">
                 <input type="text" name="senha" placeholder="senha">
                 <input type="submit" name="submit" value="submit">
-            </form>
+            </form> -->
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                        <th scope="col">Handle</th>
-
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Senha</th>
+                        <th scope="col">Ativo</th>
+                        <th scope="col">Admin</th>
                     </tr>
                 </thead>
                 <?php
-                $selectUsuarios = "SELECT * FROM usuarios order by id desc";
+                $selectUsuarios = "SELECT * FROM usuarios order by id asc";
                 $result = $db->query($selectUsuarios);
 
                 while ($row = $result->fetchArray()) {
