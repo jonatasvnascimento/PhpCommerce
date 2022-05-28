@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +34,10 @@ session_start();
     
     if ($ab > 0) {
       if (password_verify($dados['senha'], $row['senha'])) {
-        echo "Login efetuado com sucesso!";
+        $_SESSION['id'] = $dados['id'];
+        $_SESSION['nome'] = $dados['nome'];
+        $_SESSION['email'] = $dados['email'];
+        header("Location: admin.php");
       }else{
         $_SESSION['msg'] = "<p style='color:red;'>Usuário ou Senha invalidos</p>";
       }

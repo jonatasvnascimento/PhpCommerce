@@ -1,3 +1,16 @@
+<?php
+
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+ob_start();
+
+if(!isset($_SESSION['id']) && !isset($_SESSION['nome']) && !isset($_SESSION['email'])){
+  header("Location: index.php");
+}
+?>
+
 <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
         <div class="sidebar-brand d-none d-md-flex">
@@ -48,7 +61,7 @@
                     </svg>
                     Usuarios</a>
                 <ul class="nav-group-items">
-                <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="usuario.php"><span class="nav-icon"></span> Cadastros de Usuarios</a>
                     </li>
                     <li class="nav-item">
@@ -332,7 +345,7 @@
                                 <svg class="icon me-2">
                                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                                 </svg>
-                                Lock Account</a><a class="dropdown-item" href="login.php">
+                                Lock Account</a><a class="dropdown-item" href="sair.php">
                                 <svg class="icon me-2">
                                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
                                 </svg>
@@ -355,4 +368,3 @@
         </header>
         <div class="body flex-grow-1 px-3">
             <!-- Adicionar aqui o corpo da pagina -->
-      
