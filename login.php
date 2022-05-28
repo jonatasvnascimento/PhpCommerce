@@ -16,7 +16,6 @@ session_start();
   <p>Login</p>
   <?php
 
-
   include_once "model/db.php";
 
   $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -30,27 +29,22 @@ session_start();
     $selectUsuarios = "SELECT id, email, senha FROM usuarios where nome = '{$dados['email']}' limit 1";
     $result = $db->query($selectUsuarios);
     $row = $result->fetchArray();
-
-    $ab = is_array($row) ? count($row) : 0 ;
-   if($ab > 0){
-    echo "Usuário existe";
-   }else{
-     echo "Usuário não existe";
-   }
-
-    // while ($row = $result->fetchArray()) {
-    //   $id = $row['id'];
-    //   $email = $row['email'];
-    //   $senha = $row['senha'];
-
-    //   if ($dados['email'] == $email && $dados['senha'] == $senha) {
-    //   } else {
-    //     echo "<script> alert('Usuário ou senha incorretos');</script>";
-    //   }
-
-    //   var_dump("{$id} - {$email} - {$senha}");
-    // }
+    $ab = is_array($row) ? count($row) : 0;
+    
+    if ($ab > 0) {
+      if (password_verify($dados['senha'], $row['senha'])) {
+        $_SESSION['msg'] = "<p style='color:red;'>Usuário ou Senha invalidos</p>";
+      }
+    } else {
+      $_SESSION['msg'] = "<p style='color:red;'>Usuário ou Senha invalidos</p>";
+    }
   }
+
+  if (!empty($_SESSION['msg'])) {
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+  }
+
   ?>
 
   <form action="" method="POST">
