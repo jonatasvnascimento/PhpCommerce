@@ -62,9 +62,14 @@ if (!empty($dados['SendLogin'])) {
   // var_dump($dados);
   // echo "</pre>";
 
-  $selectUsuarios = "SELECT id, email, senha FROM usuarios where nome = '{$dados['email']}' and isAdmin = 1 limit 1";
-  $result = $db->query($selectUsuarios);
+  // $selectUsuarios = "SELECT id, email, senha FROM usuarios where nome = '{$dados['email']}' and isAdmin = 1 limit 1";
+  // $result = $db->query($selectUsuarios);
+
+  $stmt = $db->prepare('SELECT id, email, senha FROM usuarios where email =:email and isAdmin = 1 limit 1');
+  $stmt->bindValue(':email', $dados['email'], SQLITE3_TEXT);
+  $result = $stmt->execute();
   $row = $result->fetchArray();
+
   $ab = is_array($row) ? count($row) : 0;
 
   if ($ab > 0) {
